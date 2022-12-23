@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.vip.list.view.SwipeMenuView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_menu_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!--内容条目-->
+    <LinearLayout
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <!--侧滑条目-->
+    <LinearLayout
+        android:id="@+id/ll_slide"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" />
+
+
+</com.vip.list.view.SwipeMenuView>

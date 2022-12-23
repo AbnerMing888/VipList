@@ -1,0 +1,161 @@
+project.ext {
+    //是否允许module单独调试
+    isModuleDebug = false
+    isModuleName = ""//单独调试module名
+    //基础信息配置
+    compileSdkVersion = 30
+    buildToolsVersion = "30.0.2"
+    minSdkVersion = 21
+    targetSdkVersion = 30
+    applicationId = "com.abner.list"
+    versionCode = 1
+    versionName = "1.0.0"
+
+    //设置app配置
+    setAppDefaultConfig = {
+        extension ->
+            //指定为application
+            extension.apply plugin: 'com.android.application'
+            extension.description "app"
+
+            //公共的apply 主要是用于三方库
+            extension.apply plugin: 'kotlin-android'
+            extension.apply plugin: 'kotlin-parcelize'
+            extension.apply plugin: 'kotlin-kapt'
+
+            appImplementation = "app"
+            //设置项目的android
+            setAppAndroidConfig extension.android
+            //设置项目的三方库依赖
+            setDependencies extension.dependencies
+
+    }
+
+    //设置application 公共的android配置
+    setAppAndroidConfig = {
+        extension ->
+            extension.compileSdkVersion project.ext.compileSdkVersion
+            extension.buildToolsVersion project.ext.buildToolsVersion
+            extension.defaultConfig {
+                applicationId project.ext.applicationId
+                minSdkVersion project.ext.minSdkVersion
+                targetSdkVersion project.ext.targetSdkVersion
+                versionCode project.ext.versionCode
+                versionName project.ext.versionName
+                extension.flavorDimensions "versionCode"
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+                if (appImplementation == "app") {
+                    ndk {
+                        //设置支持的SO库架构
+                        abiFilters "armeabi-v7a"
+                    }
+                }
+            }
+
+            extension.compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+            extension.kotlinOptions {
+                jvmTarget = '1.8'
+            }
+
+            extension.buildFeatures.dataBinding = true
+    }
+
+    //动态改变，用于单模块调试
+    setAppOrLibDefaultConfig = {
+        extension ->
+
+            if (project.ext.isModuleDebug && project.ext.isModuleName == project.name) {
+                extension.apply plugin: 'com.android.application'
+                extension.description "app"
+            } else {
+                extension.apply plugin: 'com.android.library'
+                extension.description "lib"
+
+            }
+            extension.apply plugin: 'kotlin-android'
+            extension.apply plugin: 'kotlin-parcelize'
+            extension.apply plugin: 'kotlin-kapt'
+
+            appImplementation = project.name
+
+            //设置通用Android配置
+            setAppOrLibAndroidConfig extension.android
+            //设置通用依赖配置
+            setDependencies extension.dependencies
+    }
+
+
+    //设置lib 公共的android配置
+    setLibAndroidConfig = {
+        extension -> //extension 相当于 android 对象
+            extension.compileSdkVersion project.ext.compileSdkVersion
+            extension.buildToolsVersion project.ext.buildToolsVersion
+            extension.defaultConfig {
+                minSdkVersion project.ext.minSdkVersion
+                targetSdkVersion project.ext.targetSdkVersion
+                versionCode project.ext.versionCode
+                versionName project.ext.versionName
+
+                testInstrumentationRunner "android.support.tablet_test.runner.AndroidJUnitRunner"
+
+            }
+
+    }
+
+    //设置通用的 android配置（可作为project单独调试）
+    setAppOrLibAndroidConfig = {
+        extension ->
+            extension.compileSdkVersion project.ext.compileSdkVersion
+            extension.buildToolsVersion project.ext.buildToolsVersion
+            extension.defaultConfig {
+                minSdkVersion project.ext.minSdkVersion
+                targetSdkVersion project.ext.targetSdkVersion
+                versionCode project.ext.versionCode
+                versionName project.ext.versionName
+
+                extension.flavorDimensions "versionCode"
+
+                testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            }
+
+            //使用的jdk版本
+            extension.compileOptions {
+                sourceCompatibility JavaVersion.VERSION_1_8
+                targetCompatibility JavaVersion.VERSION_1_8
+            }
+            extension.kotlinOptions {
+                jvmTarget = '1.8'
+            }
+
+    }
+
+    //设置lib配置（只可以作为lib,不可单独调试）
+    setLibDefaultConfig = {
+        extension ->
+            //library，代表只是单纯的库，不需要依赖其他模块
+            extension.apply plugin: 'com.android.library'
+            extension.description "lib"
+
+            setLibAndroidConfig extension.android
+            setDependencies extension.dependencies
+    }
+
+    //公用的三方库依赖，慎重引入，主要引入基础库依赖
+    setDependencies = {
+        extension ->
+            extension.implementation fileTree(dir: 'libs', include: ['*.jar'])
+            extension.implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+            extension.implementation 'androidx.core:core-ktx:1.3.1'
+            extension.implementation 'androidx.appcompat:appcompat:1.3.1'
+            extension.implementation 'com.google.android.material:material:1.4.0'
+            extension.implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+            extension.testImplementation 'junit:junit:4.+'
+            extension.androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+            extension.androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    }
+}

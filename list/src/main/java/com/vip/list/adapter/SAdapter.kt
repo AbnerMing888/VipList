@@ -1,0 +1,105 @@
+package com.vip.list.adapter
+
+import com.vip.list.base.BaseViewHolder
+import com.vip.list.listener.OnConvertListener
+import com.vip.list.listener.OnHeadOrFootConvertListener
+import java.lang.NullPointerException
+
+/**
+ *AUTHOR:AbnerMing
+ *DATE:2022/11/16
+ *INTRODUCE:侧滑拓展函数适配器
+ */
+class SAdapter<T> : SlideDeleteAdapter<T>() {
+    private var mLayoutId: Int? = null
+
+    private var mSlideLayoutId: Int? = null
+
+    override fun getViewLayout(): Int {
+        if (mLayoutId == null) {
+            throw NullPointerException("没设置layout，我就问你是不是故意的！！！")
+        }
+        return mLayoutId!!
+    }
+
+    override fun getSlideLayout(): Int {
+        if (mSlideLayoutId == null) {
+            return super.getSlideLayout()
+        }
+        return mSlideLayoutId!!
+    }
+
+    /**
+     * AUTHOR:AbnerMing
+     * INTRODUCE:添加侧滑删除布局
+     */
+    fun addSlideLayout(layoutId: Int) {
+        mSlideLayoutId = layoutId
+    }
+
+    /**
+     * AUTHOR:AbnerMing
+     * INTRODUCE:添加布局
+     */
+    fun addLayout(layoutId: Int, variableName: Int = -1) {
+        mLayoutId = layoutId
+        setModelId(variableName)
+    }
+
+    override fun dataOperationHead(holder: BaseViewHolder, position: Int) {
+        super.dataOperationHead(holder, position)
+        convertListener(holder, position)
+    }
+
+    override fun dataOperationFoot(holder: BaseViewHolder, position: Int) {
+        super.dataOperationFoot(holder, position)
+        convertListener(holder, position)
+    }
+
+    private fun convertListener(holder: BaseViewHolder, position: Int) {
+        if (mOnHeadOrFootConvertListener != null) {
+            mOnHeadOrFootConvertListener?.bind(holder, position)
+        }
+    }
+
+    /**
+     * AUTHOR:AbnerMing
+     * INTRODUCE:绑定头部或者尾部
+     */
+    fun bindHeadOrFoot(block: BaseViewHolder.(position: Int) -> Unit) {
+        setHeadOrFootConvert(object : OnHeadOrFootConvertListener {
+            override fun bind(holder: BaseViewHolder, position: Int) {
+                block(holder, position)
+            }
+        })
+    }
+
+
+    /**
+     * AUTHOR:AbnerMing
+     * INTRODUCE:绑定数据
+     */
+    fun bindData(block: BaseViewHolder.(t: T) -> Unit) {
+        setConvert(object : OnConvertListener<T> {
+            override fun bind(holder: BaseViewHolder, item: T) {
+                block(holder, item)
+            }
+        })
+    }
+
+    override fun slideOperation(holder: BaseViewHolder, item: T?, position: Int) {
+        if (mOnConvertListener != null) {
+            mOnConvertListener?.bind(holder, item!!)
+        }
+    }
+
+    private var mOnConvertListener: OnConvertListener<T>? = null
+    private fun setConvert(mOnConvertListener: OnConvertListener<T>) {
+        this.mOnConvertListener = mOnConvertListener
+    }
+
+    private var mOnHeadOrFootConvertListener: OnHeadOrFootConvertListener? = null
+    private fun setHeadOrFootConvert(mOnHeadOrFootConvertListener: OnHeadOrFootConvertListener) {
+        this.mOnHeadOrFootConvertListener = mOnHeadOrFootConvertListener
+    }
+}

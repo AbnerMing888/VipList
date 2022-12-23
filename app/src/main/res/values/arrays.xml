@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list_array">
+        <item>普通列表</item>
+        <item>封装列表</item>
+        <item>Databinding列表</item>
+        <item>分割线</item>
+        <item>头和尾添加和删除</item>
+        <item>数据追加和删除</item>
+        <item>缺省页(空或错误)</item>
+        <item>拖拽排序</item>
+        <item>侧滑删除</item>
+        <item>侧滑显示按钮</item>
+        <item>条目吸顶效果</item>
+        <item>条目单选、多选、全选、反选状态</item>
+        <item>下拉刷新和上拉加载</item>
+    </string-array>
+</resources>
