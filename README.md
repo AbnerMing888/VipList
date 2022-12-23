@@ -1,6 +1,20 @@
 # VipList
 一个超简单的列表加载，添加头尾，缺省页，拖拽排序，侧滑删除，DataBinding，设置分割线，吸顶效果，等等，从未如此简单！
 
+
+<p align="center"><img src="images/vip_list.png" width="200px"/></p>
+
+<p align="center">
+    <strong>超简单的RecyclerView加载框架</strong>
+    <br>
+    <br>
+    <a href="">使用文档</a>
+    | <a href="">下载体验</a>
+    <br>
+    <img src="images/device_list.png" width="200px" />
+</p>
+
+
 ## VipList快速使用
 
 1、在你的根项目下的build.gradle文件下，引入maven。
@@ -37,16 +51,12 @@ dependencies {
 }
 ```
 
-## VipList相关功能Demo效果图
-
-<img src="images/device_list.png" width="200px" />
-
 
 ## 欢迎关注作者
 
 微信搜索【Android干货铺】，或扫描下面二维码关注，查阅更多技术文章！
 
-<img src="images/abner.jpg" width="200px" />
+<img src="images/abner.jpg" width="300px" />
 
 ## License
 
