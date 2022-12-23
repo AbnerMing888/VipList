@@ -25,7 +25,9 @@ allprojects {
 |  refresh  |  只包含下拉刷新、上拉加载  |  1.0.0  |  implementation 'com.vip:refresh:1.0.0'  |
 
 
-#### 具体使用
+#### 具体引入
+
+大家注意有选择进行使用，relist包含list和refresh，用了relist，list和refresh，就不要再引入了！！！
 
 ```groovy
 dependencies {
@@ -35,7 +37,9 @@ dependencies {
 }
 ```
 
+## VipList相关功能Demo效果图
 
+<img src="images/device_list.png" width="200px" />
 
 
 ## 欢迎关注作者
