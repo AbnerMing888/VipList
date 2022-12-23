@@ -2,7 +2,7 @@
 一个超简单的列表加载，添加头尾，缺省页，拖拽排序，侧滑删除，DataBinding，设置分割线，吸顶效果，等等，从未如此简单！
 
 
-<p align="center"><img src="images/vip_list.png" width="200px"/></p>
+<p align="center"><img src="images/vip_list.png" width="300px"/></p>
 
 <p align="center">
     <strong>超简单的RecyclerView加载框架</strong>
@@ -11,26 +11,28 @@
     <a href="">使用文档</a>
     | <a href="">下载体验</a>
     <br><br>
-    <img src="images/device_list.png" width="200px" />
+    <img src="images/device_list.png" width="300px" />
     <br><br>
     本库长期维护，欢迎大家提出问题，均第一时间解决！
 </p>
 
-## VipList主要功能
+## VipList主要功能【截止2022年12月23日】
 
+- [x] 支持传统模式Adapter加载
 - [x] 快速创建列表加载
 - [x] 快速创建多布局列表
 - [x] 支持添加头和尾
-- [x] 缺省页面动态设置
+- [x] 支持缺省页面动态设置
 - [x] 支持DataBinding形式条目加载
 - [x] 支持DataBinding形式列表加载
 - [x] 支持多种分割线样式
 - [x] 支持选择模式(多选/单选/全选/取消全选/反选)
 - [x] 拖拽排序
 - [x] 侧滑删除
-- [x] 支持侧滑按钮，可动态传递侧滑视图
+- [x] 支持侧滑按钮，可动态传递侧滑按钮视图
 - [x] 支持条目吸顶效果
-- [x] 支持下拉刷新和上拉加载
+- [x] 支持下拉刷新和上拉加载（结合SmartRefreshLayout实现）
+- [x] 自动分页加载数据
 
 ## VipList快速使用
 
@@ -67,7 +69,6 @@ dependencies {
     implementation 'com.vip:refresh:1.0.0'//下拉刷新、上拉加载库，如果使用了relist，这个不要再引用
 }
 ```
-
 
 ## 欢迎关注作者
 
