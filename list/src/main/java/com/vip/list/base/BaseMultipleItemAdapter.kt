@@ -11,6 +11,7 @@ import com.vip.list.data.BaseMultipleItemBean
  */
 abstract class BaseMultipleItemAdapter : BaseAdapter<BaseMultipleItemBean>() {
 
+
     override fun isMultiple(): Boolean {
         return true
     }
@@ -26,13 +27,18 @@ abstract class BaseMultipleItemAdapter : BaseAdapter<BaseMultipleItemBean>() {
     }
 
     override fun dataOperation(holder: BaseViewHolder, t: BaseMultipleItemBean?, position: Int) {
-        val bind = DataBindingUtil.bind<ViewDataBinding>(holder.itemView)
-        mVariableIds.forEach {
-            bind?.setVariable(it, t)
-            bind?.executePendingBindings()
+        try {
+            val bind = DataBindingUtil.bind<ViewDataBinding>(holder.itemView)
+            mVariableIds.forEach {
+                bind?.setVariable(it, t)
+                bind?.executePendingBindings()
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        } finally {
+            bindOperation(holder, t, position)
         }
 
-        bindOperation(holder, t, position)
     }
 
     abstract fun bindOperation(holder: BaseViewHolder, t: BaseMultipleItemBean?, position: Int)
@@ -42,6 +48,7 @@ abstract class BaseMultipleItemAdapter : BaseAdapter<BaseMultipleItemBean>() {
      * INTRODUCE:添加布局
      */
     var mVariableIds = ArrayList<Int>()
+
     inline fun <reified T> addLayout(layoutId: Int, variableName: Int = -1) {
         val t = T::class.java.newInstance()
         val baseMultipleItemBean = t as BaseMultipleItemBean
@@ -63,7 +70,7 @@ abstract class BaseMultipleItemAdapter : BaseAdapter<BaseMultipleItemBean>() {
      * AUTHOR:AbnerMing
      * INTRODUCE:获取条目对象
      */
-    fun <T> getItemBean(t: BaseMultipleItemBean): T {
-        return t as T
+    fun <T> getItemBean(position: Int): T {
+        return getModel(position) as T
     }
 }

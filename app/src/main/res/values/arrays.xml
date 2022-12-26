@@ -3,6 +3,7 @@
     <string-array name="list_array">
         <item>普通列表</item>
         <item>封装列表</item>
+        <item>多条目</item>
         <item>Databinding列表</item>
         <item>分割线</item>
         <item>头和尾添加和删除</item>

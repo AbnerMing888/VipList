@@ -58,6 +58,9 @@
         <activity
             android:name=".refresh.RefreshListActivity"
             android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".multiple.MultipleItemActivity"
+            android:screenOrientation="fullSensor" />
     </application>
 
 </manifest>

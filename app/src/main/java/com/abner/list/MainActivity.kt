@@ -11,6 +11,7 @@ import com.abner.list.default.DefaultActivity
 import com.abner.list.divider.DividerActivity
 import com.abner.list.drag.DragActivity
 import com.abner.list.head_footer.HeadFooterActivity
+import com.abner.list.multiple.MultipleItemActivity
 import com.abner.list.ordinary.OrdinaryListActivity
 import com.abner.list.refresh.RefreshListActivity
 import com.abner.list.simplify.SimplifyListActivity
@@ -77,37 +78,40 @@ class MainActivity : BaseActivity<LayoutListBinding>() {
             1 -> {//封装列表
                 start<SimplifyListActivity>()
             }
-            2 -> {//DataBinding列表
+            2 -> {//多条目
+                start<MultipleItemActivity>()
+            }
+            3 -> {//DataBinding列表
                 start<DataBindActivity>()
             }
-            3 -> {//分割线
+            4 -> {//分割线
                 start<DividerActivity>()
             }
-            4 -> {//头和尾追加和删除
+            5 -> {//头和尾追加和删除
                 start<HeadFooterActivity>()
             }
-            5 -> {//数据追加和删除
+            6 -> {//数据追加和删除
                 start<DataActivity>()
             }
-            6 -> {//缺省页面
+            7 -> {//缺省页面
                 start<DefaultActivity>()
             }
-            7 -> {//拖拽排序
+            8 -> {//拖拽排序
                 start<DragActivity>()
             }
-            8 -> {//侧滑删除
+            9 -> {//侧滑删除
                 start<SlideDeleteActivity>()
             }
-            9 -> {//侧滑显示按钮
+            10 -> {//侧滑显示按钮
                 start<SlideMenuDeleteActivity>()
             }
-            10 -> {//条目吸顶操作
+            11 -> {//条目吸顶操作
                 start<StickHeaderActivity>()
             }
-            11 -> {//单选、多选、全选、反选
+            12 -> {//单选、多选、全选、反选
                 start<ChoiceActivity>()
             }
-            12 -> {//上拉刷新和上拉
+            13 -> {//上拉刷新和上拉
                 start<RefreshListActivity>()
             }
         }
