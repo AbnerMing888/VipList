@@ -1,5 +1,4 @@
 rootProject.name = "VipList"
 include ':app'
 include ':list'
-include ':refresh'
 include ':refresh_list'

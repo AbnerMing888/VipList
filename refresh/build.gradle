@@ -1,2 +1,0 @@
-apply from: "${rootProject.rootDir}/common.gradle"
-project.ext.setAppOrLibDefaultConfig project
