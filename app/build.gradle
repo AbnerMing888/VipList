@@ -1,7 +1,8 @@
 apply from: "${rootProject.rootDir}/common.gradle"
 project.ext.setAppDefaultConfig project
+
 dependencies {
-    implementation 'com.vip:relist:1.0.0'
+    implementation 'com.vip:relist:1.0.1'
     implementation 'com.vip:base:1.0.3'//自己的一个简单的mvvm基类库 https://github.com/AbnerMing888/VipBase
     implementation 'com.vip:dialog:1.0.0'//自己的一个易拓展的Dialog库 https://github.com/AbnerMing888/VipDialog
 }

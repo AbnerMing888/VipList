@@ -51,7 +51,7 @@ class SimplifyGridFragment : BaseFragment<LayoutListBinding>(R.layout.layout_lis
                 val bean = OrdinaryListBean()
                 bean.title = "我是标题$a"
                 bean.desc = "我是描述信息$a"
-                bean.icon = R.mipmap.ic_launcher
+                bean.icon = R.mipmap.vip_list_logo
                 add(bean)
             }
         }

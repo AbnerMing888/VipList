@@ -41,17 +41,17 @@ class SimplifyMultipleItemFragment : BaseFragment<LayoutListBinding>(R.layout.la
                 if (a % 3 == 0) {
                     val bean02 = MultipleItem02Bean()
                     bean02.icon01 =
-                        ContextCompat.getDrawable(requireContext(), R.mipmap.ic_launcher)
+                        ContextCompat.getDrawable(requireContext(), R.mipmap.vip_list_logo)
                     bean02.icon02 =
-                        ContextCompat.getDrawable(requireContext(), R.mipmap.ic_launcher)
+                        ContextCompat.getDrawable(requireContext(), R.mipmap.vip_list_logo)
                     bean02.icon03 =
-                        ContextCompat.getDrawable(requireContext(), R.mipmap.ic_launcher)
+                        ContextCompat.getDrawable(requireContext(), R.mipmap.vip_list_logo)
                     add(bean02)
                 }
 
                 if (a % 2 == 0) {
                     val bean01 = MultipleItem01Bean()
-                    bean01.icon = ContextCompat.getDrawable(requireContext(), R.mipmap.ic_launcher)
+                    bean01.icon = ContextCompat.getDrawable(requireContext(), R.mipmap.vip_list_logo)
                     bean01.title = "我是类型一测试标题"
                     bean01.desc = "我是类型一测试描述"
                     add(bean01)
