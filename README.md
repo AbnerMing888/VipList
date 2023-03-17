@@ -16,7 +16,7 @@
     本库长期维护，欢迎大家提出问题，均第一时间解决！
 </p>
 
-## VipList主要功能【截止2022年12月23日】
+## VipList主要功能【截止2023年3月17日】
 
 - [x] 支持传统模式Adapter加载
 - [x] 快速创建列表加载
@@ -53,8 +53,8 @@ allprojects {
 
 |  依赖  |  概述  |  版本号  |  集成  |
 |  ----  |  ----  |  ----  |  ----  |
-|  relist  |  一个包含了列表加载和下拉刷新、上拉加载的库  |  1.0.1  |  implementation 'com.vip:relist:1.0.1'  |
-|  list  |  只包含列表加载（添加头尾、缺省页、侧滑删除、吸顶效果、分割线、DataBinding等）  |  1.0.1  |  implementation 'com.vip:list:1.0.1'  |
+|  relist  |  一个包含了列表加载和下拉刷新、上拉加载的库  |  1.0.2  |  implementation 'com.vip:relist:1.0.2'  |
+|  list  |  只包含列表加载（添加头尾、缺省页、侧滑删除、吸顶效果、分割线、DataBinding等）  |  1.0.2  |  implementation 'com.vip:list:1.0.2'  |
 |  refresh  |  只包含下拉刷新、上拉加载  |  1.0.0  |  implementation 'com.vip:refresh:1.0.0'  |
 
 

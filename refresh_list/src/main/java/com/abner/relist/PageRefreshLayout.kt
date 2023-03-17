@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.abner.refresh.kernel.SmartRefreshLayout
 import com.abner.refresh.kernel.api.RefreshLayout
 import com.abner.refresh.kernel.listener.OnRefreshLoadMoreListener
-import com.vip.list.util.get
 import com.vip.list.util.getAdapter
 
 /**

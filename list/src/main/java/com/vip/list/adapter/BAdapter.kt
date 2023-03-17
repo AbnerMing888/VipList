@@ -49,7 +49,10 @@ class BAdapter<T> : BindingAdapter<T, ViewDataBinding>() {
      */
     fun addLayout(layoutId: Int, variableName: Int = -1) {
         mLayoutId = layoutId
-        setModelId(variableName)
+        if(variableName!=-1){
+            setModelId(variableName)
+        }
+
     }
 
     override fun bindOperation(holder: BaseViewHolder, item: T?, position: Int) {

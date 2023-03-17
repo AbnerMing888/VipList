@@ -27,6 +27,9 @@ class SimplifyMultipleItemFragment : BaseFragment<LayoutListBinding>(R.layout.la
                 addLayout<MultipleItem01Bean>(R.layout.layout_multiple_01, BR.multiple1)
                 addLayout<MultipleItem02Bean>(R.layout.layout_multiple_02, BR.multiple2)
                 addLayout<MultipleItem03Bean>(R.layout.layout_multiple_03, BR.multiple3)
+                bindData {
+
+                }
             }.setList(getMoreList())
     }
 
@@ -37,7 +40,7 @@ class SimplifyMultipleItemFragment : BaseFragment<LayoutListBinding>(R.layout.la
     private fun getMoreList(): MutableList<BaseMultipleItemBean> {
         return mutableListOf<BaseMultipleItemBean>().apply {
 
-            for (a in 0..20) {
+            for (a in 0..50) {
                 if (a % 3 == 0) {
                     val bean02 = MultipleItem02Bean()
                     bean02.icon01 =
@@ -51,7 +54,8 @@ class SimplifyMultipleItemFragment : BaseFragment<LayoutListBinding>(R.layout.la
 
                 if (a % 2 == 0) {
                     val bean01 = MultipleItem01Bean()
-                    bean01.icon = ContextCompat.getDrawable(requireContext(), R.mipmap.vip_list_logo)
+                    bean01.icon =
+                        ContextCompat.getDrawable(requireContext(), R.mipmap.vip_list_logo)
                     bean01.title = "我是类型一测试标题"
                     bean01.desc = "我是类型一测试描述"
                     add(bean01)

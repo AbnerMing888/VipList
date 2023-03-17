@@ -102,7 +102,12 @@ class ItemDivider : ItemDecoration {
         state: RecyclerView.State
     ) {
         super.getItemOffsets(outRect, view, parent, state)
-        outRect.set(0, 0, mLineWidth, mLineWidth)
+        if (mOrientation == RecyclerView.HORIZONTAL) {
+            outRect.set(0, 0, mLineWidth, 0)
+        } else {
+            outRect.set(0, 0, 0, mLineWidth)
+        }
+
     }
 
     /**

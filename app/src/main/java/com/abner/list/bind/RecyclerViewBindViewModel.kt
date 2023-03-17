@@ -5,8 +5,6 @@ import com.abner.list.R
 import com.abner.list.databinding.LayoutOrdinaryItemBinding
 import com.abner.list.ordinary.OrdinaryListBean
 import com.vip.base.viewmodel.BaseViewModel
-import com.vip.list.adapter.BAdapter
-import com.vip.list.listener.OnAdapterListener
 
 /**
  *AUTHOR:AbnerMing

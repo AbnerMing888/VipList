@@ -28,6 +28,6 @@ class RefreshListActivity : BaseVMActivity<ActivityRefreshBinding,
             mViewModel.doHttp {
                 addData(it)
             }
-        }.refresh()
+        }.autoRefresh()
     }
 }
