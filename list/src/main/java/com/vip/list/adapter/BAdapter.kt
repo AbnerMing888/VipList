@@ -5,7 +5,6 @@ import com.vip.list.base.BaseViewHolder
 import com.vip.list.data.BaseStickHeaderBean
 import com.vip.list.listener.OnConvertListener
 import com.vip.list.listener.OnHeadOrFootConvertListener
-import java.lang.NullPointerException
 
 /**
  *AUTHOR:AbnerMing
@@ -49,7 +48,7 @@ class BAdapter<T> : BindingAdapter<T, ViewDataBinding>() {
      */
     fun addLayout(layoutId: Int, variableName: Int = -1) {
         mLayoutId = layoutId
-        if(variableName!=-1){
+        if (variableName != -1) {
             setModelId(variableName)
         }
 

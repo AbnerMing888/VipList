@@ -1,5 +1,7 @@
 package com.abner.list.simplify.fragment
 
+import android.util.Log
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.abner.list.R
@@ -34,9 +36,9 @@ class SimplifyHorizontalFragment : BaseFragment<LayoutListBinding>(R.layout.layo
                         ivPic.setImageResource(model.icon!!)
                     }
                 }
-                setOnItemClickListener {
+                setOnItemClickListener { view, position ->
                     //条目点击事件
-                    Toast.makeText(requireContext(), "当前点击条目为：$it", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "当前点击条目为：$position", Toast.LENGTH_SHORT).show()
                 }
             }.setList(getList())
     }

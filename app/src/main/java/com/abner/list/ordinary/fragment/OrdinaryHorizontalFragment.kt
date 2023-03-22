@@ -33,9 +33,9 @@ class OrdinaryHorizontalFragment : BaseFragment<LayoutListBinding>(R.layout.layo
         //设置数据
         adapter.setList(getList())
 
-        adapter.setOnItemClickListener {
+        adapter.setOnItemClickListener { view, position ->
             //条目点击事件
-            Toast.makeText(requireContext(), "当前点击条目为：$it", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "当前点击条目为：$position", Toast.LENGTH_SHORT).show()
         }
     }
 

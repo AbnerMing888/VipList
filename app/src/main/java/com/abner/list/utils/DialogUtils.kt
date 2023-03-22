@@ -21,8 +21,8 @@ fun AppCompatActivity.showDialog(list: MutableList<String>, itemClick: (position
             //封装模式进行列表加载
             it.recycler.linear().divider().set<String> {
                 addLayout(R.layout.layout_dialog_item, BR.str)
-                setOnItemClickListener {
-                    itemClick.invoke(it)
+                setOnItemClickListener { view, position ->
+                    itemClick.invoke(position)
                     dismiss()
                 }
             }.setList(list)

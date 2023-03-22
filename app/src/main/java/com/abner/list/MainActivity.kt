@@ -56,8 +56,8 @@ class MainActivity : BaseActivity<LayoutListBinding>() {
                 }
 
                 //条目点击事件
-                setOnItemClickListener {
-                    itemClick(it)
+                setOnItemClickListener { view, position ->
+                    itemClick(position)
                 }
 
             }

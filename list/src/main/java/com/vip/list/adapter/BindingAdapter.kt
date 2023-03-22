@@ -1,6 +1,5 @@
 package com.vip.list.adapter
 
-import android.util.Log
 import androidx.databinding.ViewDataBinding
 import com.vip.list.base.BaseAdapter
 import com.vip.list.base.BaseViewHolder
@@ -32,8 +31,11 @@ abstract class BindingAdapter<T, VB : ViewDataBinding> :
             dataBinding?.setVariable(mVariableName, t)
             dataBinding?.executePendingBindings()
         }
+
         bindOperation(holder, t, position)
+
     }
+
 
     abstract fun bindOperation(holder: BaseViewHolder, item: T?, position: Int)
 

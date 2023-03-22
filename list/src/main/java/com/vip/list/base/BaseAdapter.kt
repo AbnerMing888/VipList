@@ -34,6 +34,9 @@ abstract class BaseAdapter<T>
     //条目点击不带ViewHolder
     private var mItemClick: ((Int) -> Unit?)? = null
 
+    //条目点击带View
+    private var mItemViewClick: ((View, Int) -> Unit?)? = null
+
     //多选的最终回调
     private var mItemMultipleChoiceListener: ((List<T>) -> Unit?)? = null
 
@@ -460,10 +463,12 @@ abstract class BaseAdapter<T>
                             notifyItemChanged(position)
                         }
                     }
-
                     //条目点击事件
                     mItemClick?.let {
                         it(position)
+                    }
+                    mItemViewClick?.let {
+                        it(holder.itemView, position)
                     }
                     mItemViewHolderClick?.let {
                         it(position, holder)
@@ -513,6 +518,14 @@ abstract class BaseAdapter<T>
      */
     fun setOnItemClickListener(itemClick: (position: Int) -> Unit) {
         mItemClick = itemClick
+    }
+
+    /**
+     * AUTHOR:AbnerMing
+     * INTRODUCE:设置条目点击事件
+     */
+    fun setOnItemClickListener(itemViewClick: (view: View, position: Int) -> Unit) {
+        mItemViewClick = itemViewClick
     }
 
     /**
