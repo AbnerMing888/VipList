@@ -1,9 +1,18 @@
 # VipList
 
-一个超简单的列表加载，添加头尾，缺省页，拖拽排序，侧滑删除，DataBinding，设置分割线，吸顶效果，等等，从未如此简单！
+```kotlin
+mBinding.recycler.linear()//选择布局管理器
+    .set<OrdinaryListBean> {
+        addLayout(R.layout.layout_ordinary_item)//item布局
+    }.setList(getList())//设置布局
+```
 
+上面的代码就完成了一个列表加载，就问你，简单不简单！！！
+
+VipList一个超简单的列表加载，添加头尾，缺省页，拖拽排序，侧滑删除，DataBinding，设置分割线，吸顶效果，等等，从未如此简单！
 
 <p align="center"><img src="images/vip_list.png" width="300px"/></p>
+
 
 <p align="center">
     <strong>超简单的RecyclerView加载框架</strong>
@@ -14,10 +23,10 @@
     <br><br>
     <img src="images/device_list.png" width="300px" />
     <br><br>
-    本库长期维护，欢迎大家提出问题，均第一时间解决！
+    <strong>本库长期维护，欢迎大家提出问题，均第一时间解决！</strong>
 </p>
 
-## VipList主要功能【截止2023年3月17日】
+## VipList主要功能【截止2023年7月24日】
 
 - [x] 支持传统模式Adapter加载
 - [x] 快速创建列表加载
@@ -87,21 +96,21 @@ mBinding.recycler.linear()//选择布局管理器
 
 #### 各个功能一览
 
-| 功能                | 源码  | 具体使用                       |
-|-------------------|-----|----------------------------|
+| 功能                | 源码  | 具体使用                    |
+|-------------------|-----|-------------------------|
 | 普通列表加载            |  OrdinaryListActivity   | [点击查看](md/OrdinaryList.md) |
-| 封装列表（推荐）          |  SimplifyListActivity   | [点击查看](md/OrdinaryList.md) |
-| 多条目               |  MultipleItemActivity   | [点击查看](md/OrdinaryList.md) |
-| DataBinding列表(推荐) |  DataBindActivity   | [点击查看](md/OrdinaryList.md) |
-| 设置分割线             |  DividerActivity   | [点击查看](md/OrdinaryList.md) |
-| 设置头和尾             |  HeadFooterActivity   | [点击查看](md/OrdinaryList.md) |
-| 设置缺省页面            |  DataActivity   | [点击查看](md/OrdinaryList.md) |
-| 拖拽排序            |  DragActivity   | [点击查看](md/OrdinaryList.md) |
-| 侧滑删除            |  SlideDeleteActivity   | [点击查看](md/OrdinaryList.md) |
-| 侧滑显示按钮            |  SlideMenuDeleteActivity   | [点击查看](md/OrdinaryList.md) |
-| 条目吸顶操作            |  StickHeaderActivity   | [点击查看](md/OrdinaryList.md) |
-| 单选、多选、全选、反选            |  ChoiceActivity   | [点击查看](md/OrdinaryList.md) |
-| 上拉刷新和下拉            |  RefreshListActivity   | [点击查看](md/OrdinaryList.md) |
+| 封装列表（推荐）          |  SimplifyListActivity   | [点击查看](md/SimplifyList.md) |
+| 多条目               |  MultipleItemActivity   | [点击查看](md/MultipleItem.md) |
+| DataBinding列表(推荐) |  DataBindActivity   | [点击查看](md/DataBind.md) |
+| 设置分割线             |  DividerActivity   | [点击查看](md/Divider.md) |
+| 设置头和尾             |  HeadFooterActivity   | [点击查看](md/HeadFooter.md) |
+| 设置缺省页面            |  DataActivity   | [点击查看](md/Data.md) |
+| 拖拽排序            |  DragActivity   | [点击查看](md/Drag.md) |
+| 侧滑删除            |  SlideDeleteActivity   | [点击查看](md/SlideDelete.md) |
+| 侧滑显示按钮            |  SlideMenuDeleteActivity   | [点击查看](md/SlideMenuDelete.md) |
+| 条目吸顶操作            |  StickHeaderActivity   | [点击查看](md/StickHeader.md) |
+| 单选、多选、全选、反选            |  ChoiceActivity   | [点击查看](md/Choice.md) |
+| 上拉刷新和下拉            |  RefreshListActivity   | [点击查看](md/RefreshList.md) |
 
 ## 欢迎关注作者
 
