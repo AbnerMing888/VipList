@@ -34,9 +34,9 @@ class SimplifyGridFragment : BaseFragment<LayoutListBinding>(R.layout.layout_lis
                         ivPic.setImageResource(model.icon!!)
                     }
                 }
-                setOnItemClickListener { view, position ->
+                setOnItemClickListener {
                     //条目点击事件
-                    Toast.makeText(requireContext(), "当前点击条目为：$position", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "当前点击条目为：$it", Toast.LENGTH_SHORT).show()
                 }
             }.setList(getList())
     }

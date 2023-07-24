@@ -2,7 +2,7 @@ package com.vip.list.bind
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.vip.list.data.BaseMultipleItemBean
+import com.vip.list.data.BaseMultipleItem
 import com.vip.list.listener.OnAdapterListener
 import com.vip.list.listener.OnAdapterMultipleListener
 import com.vip.list.util.*
@@ -39,7 +39,7 @@ object ListBind {
         listAdapter: OnAdapterListener<T>? = null,
         isMultiple: Boolean? = null,
         multipleAdapter: OnAdapterMultipleListener? = null,
-        multipleData: MutableList<BaseMultipleItemBean>? = null,
+        multipleData: MutableList<BaseMultipleItem>? = null,
         multipleLayout: MutableList<Int>? = null,
         multipleLayoutBindData: MutableList<Class<*>>? = null,//layout绑定的数据对象
         multipleVariableName: MutableList<Int>? = null,//xml绑定的对应的VariableName

@@ -13,7 +13,7 @@ import com.vip.base.adapter.BaseFragmentPagerAdapter
 /**
  *AUTHOR:AbnerMing
  *DATE:2022/12/6
- *INTRODUCE:简化封装之后的列表展示
+ *INTRODUCE:简化封装之后的列表展示，采用无适配器模式
  */
 class SimplifyListActivity : BaseActivity<ActivityPageBinding>(R.layout.activity_page) {
     private val mFragments = arrayListOf<Fragment>(

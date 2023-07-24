@@ -51,7 +51,6 @@ class BAdapter<T> : BindingAdapter<T, ViewDataBinding>() {
         if (variableName != -1) {
             setModelId(variableName)
         }
-
     }
 
     override fun bindOperation(holder: BaseViewHolder, item: T?, position: Int) {
@@ -98,6 +97,20 @@ class BAdapter<T> : BindingAdapter<T, ViewDataBinding>() {
                 block(holder, item)
             }
         })
+    }
+
+    /**
+     * AUTHOR:AbnerMing
+     * INTRODUCE:错误信息
+     */
+    private var mException: ((Exception) -> Unit?)? = null
+    fun bindError(exception: (e: Exception) -> Unit) {
+        mException = exception
+    }
+
+    override fun bindViewHolderError(e: Exception) {
+        super.bindViewHolderError(e)
+        mException?.invoke(e)
     }
 
 

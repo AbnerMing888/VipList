@@ -1,4 +1,5 @@
 # VipList
+
 一个超简单的列表加载，添加头尾，缺省页，拖拽排序，侧滑删除，DataBinding，设置分割线，吸顶效果，等等，从未如此简单！
 
 
@@ -45,18 +46,18 @@ allprojects {
     }
 }
 ```
+
 2、在你需要使用的Module中build.gradle文件下，引入依赖。
 
 为了方便大家使用，目前拆分了三个依赖，大家可以进行有选择使用，如果你的项目没有下拉刷新和上拉加载，可以直接使用relist，如果已经
 有了自己的上拉下拉库，可以使用list，list库是对RecyclerView做的封装，简化了调用，拓展了一些功能，可以更加方便的让你使用，特别
 ，特别的简单。
 
-|  依赖  |  概述  |  版本号  |  集成  |
-|  ----  |  ----  |  ----  |  ----  |
-|  relist  |  一个包含了列表加载和下拉刷新、上拉加载的库  |  1.0.2  |  implementation 'com.vip:relist:1.0.2'  |
-|  list  |  只包含列表加载（添加头尾、缺省页、侧滑删除、吸顶效果、分割线、DataBinding等）  |  1.0.2  |  implementation 'com.vip:list:1.0.2'  |
-|  refresh  |  只包含下拉刷新、上拉加载  |  1.0.0  |  implementation 'com.vip:refresh:1.0.0'  |
-
+|  依赖  |  概述  | 版本号   | 集成                                     |
+|  ----  |  ----  |-------|----------------------------------------|
+|  relist  |  一个包含了列表加载和下拉刷新、上拉加载的库  | 1.0.3 | implementation 'com.vip:relist:1.0.3'  |
+|  list  |  只包含列表加载（添加头尾、缺省页、侧滑删除、吸顶效果、分割线、DataBinding等）  | 1.0.3 | implementation 'com.vip:list:1.0.3'    |
+|  refresh  |  只包含下拉刷新、上拉加载  | 1.0.0 | implementation 'com.vip:refresh:1.0.0' |
 
 #### 具体引入
 
@@ -64,11 +65,31 @@ allprojects {
 
 ```groovy
 dependencies {
-    implementation 'com.vip:relist:1.0.1'//一个包含了列表加载和下拉刷新、上拉加载的库，它包含了下面的两个库，使用它，下面的两个就不要引用了。
-    implementation 'com.vip:list:1.0.1'//列表加载库，如果使用了relist，这个不要再引用
+    implementation 'com.vip:relist:1.0.3'//一个包含了列表加载和下拉刷新、上拉加载的库，它包含了下面的两个库，使用它，下面的两个就不要引用了。
+    implementation 'com.vip:list:1.0.3'//列表加载库，如果使用了relist，这个不要再引用
     implementation 'com.vip:refresh:1.0.0'//下拉刷新、上拉加载库，如果使用了relist，这个不要再引用
 }
 ```
+
+#### 举例使用
+
+```kotlin
+
+mBinding.recycler.linear()//选择布局管理器
+    .set<OrdinaryListBean> {
+        addLayout(R.layout.layout_ordinary_item)//item布局
+    }.setList(getList())//设置布局
+
+```
+
+没看错，使用起来就是这么简单，通过Kotlin的扩展函数把适配器(Adapter)进行封装，利用DSL语言，让列表
+加载趋于简洁，几行代码就实现了一个列表加载。
+
+#### 各个功能一览
+
+| 功能  | 源码  | 具体使用                       |
+|-----|-----|----------------------------|
+|   普通列表加载  |  OrdinaryListActivity   | [点击查看](md/OrdinaryList.md) |
 
 ## 欢迎关注作者
 

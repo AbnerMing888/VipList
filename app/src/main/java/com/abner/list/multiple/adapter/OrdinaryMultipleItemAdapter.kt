@@ -7,7 +7,7 @@ import com.abner.list.multiple.data.MultipleItem02Bean
 import com.abner.list.multiple.data.MultipleItem03Bean
 import com.vip.list.base.BaseMultipleItemAdapter
 import com.vip.list.base.BaseViewHolder
-import com.vip.list.data.BaseMultipleItemBean
+import com.vip.list.data.BaseMultipleItem
 
 /**
  *AUTHOR:AbnerMing
@@ -23,7 +23,7 @@ class OrdinaryMultipleItemAdapter : BaseMultipleItemAdapter {
         addLayout<MultipleItem03Bean>(R.layout.layout_ordinary_multiple_03)
     }
 
-    override fun bindOperation(holder: BaseViewHolder, t: BaseMultipleItemBean?, position: Int) {
+    override fun bindOperation(holder: BaseViewHolder, t: BaseMultipleItem?, position: Int) {
 
         when (holder.itemViewType) {
             1 -> {

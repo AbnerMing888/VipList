@@ -31,11 +31,8 @@ abstract class BindingAdapter<T, VB : ViewDataBinding> :
             dataBinding?.setVariable(mVariableName, t)
             dataBinding?.executePendingBindings()
         }
-
         bindOperation(holder, t, position)
-
     }
-
 
     abstract fun bindOperation(holder: BaseViewHolder, item: T?, position: Int)
 

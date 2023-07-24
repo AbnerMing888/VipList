@@ -2,7 +2,7 @@ package com.vip.list.adapter
 
 import com.vip.list.base.BaseMultipleItemAdapter
 import com.vip.list.base.BaseViewHolder
-import com.vip.list.data.BaseMultipleItemBean
+import com.vip.list.data.BaseMultipleItem
 import com.vip.list.listener.OnHeadOrFootConvertListener
 import com.vip.list.listener.OnMultipleConvertListener
 
@@ -17,7 +17,7 @@ open class MAdapter : BaseMultipleItemAdapter() {
      * AUTHOR:AbnerMing
      * INTRODUCE:数据操作
      */
-    override fun bindOperation(holder: BaseViewHolder, t: BaseMultipleItemBean?, position: Int) {
+    override fun bindOperation(holder: BaseViewHolder, t: BaseMultipleItem?, position: Int) {
         if (mOnMultipleConvertListener != null) {
             mOnMultipleConvertListener?.bind(holder, t!!)
         }
@@ -55,12 +55,26 @@ open class MAdapter : BaseMultipleItemAdapter() {
      * AUTHOR:AbnerMing
      * INTRODUCE:绑定数据
      */
-    fun bindData(block: BaseViewHolder.(t: BaseMultipleItemBean) -> Unit) {
+    fun bindData(block: BaseViewHolder.(t: BaseMultipleItem) -> Unit) {
         setConvert(object : OnMultipleConvertListener {
-            override fun bind(holder: BaseViewHolder, t: BaseMultipleItemBean) {
+            override fun bind(holder: BaseViewHolder, t: BaseMultipleItem) {
                 block(holder, t)
             }
         })
+    }
+
+    /**
+     * AUTHOR:AbnerMing
+     * INTRODUCE:错误信息
+     */
+    private var mException: ((Exception) -> Unit?)? = null
+    fun bindError(exception: (e: Exception) -> Unit) {
+        mException = exception
+    }
+
+    override fun bindViewHolderError(e: Exception) {
+        super.bindViewHolderError(e)
+        mException?.invoke(e)
     }
 
 

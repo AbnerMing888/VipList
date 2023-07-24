@@ -21,7 +21,7 @@ class ItemBindFragment : BaseFragment<LayoutListBinding>(R.layout.layout_list) {
         mBinding.recycler.linear().divider()
             .set<OrdinaryListBean> {
                 addLayout(R.layout.layout_ordinary_bind_item, BR.ordinary)
-                setOnItemClickListener { view, position ->
+                setOnItemViewClickListener { view, position ->
                     //条目点击事件
                     Toast.makeText(requireContext(), "当前点击条目为：$position", Toast.LENGTH_SHORT).show()
                 }

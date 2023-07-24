@@ -1,7 +1,6 @@
 package com.vip.list.util
 
 import android.graphics.Color
-import android.view.View
 import androidx.recyclerview.widget.*
 import com.vip.list.adapter.BAdapter
 import com.vip.list.adapter.MAdapter
@@ -193,13 +192,12 @@ fun RecyclerView.stick(
     textPaddingLeft: Float = 0f,
     isTextCenter: Boolean = false,
     lineColor: Int = Color.parseColor("#cccccc"),
-    isShowLine: Boolean = true,
-    stickView: View? = null
+    isShowLine: Boolean = true
 ): RecyclerView {
     addItemDecoration(
         StickHeaderDecoration(
             context, height, bgColor,
-            textColor, textSize, textPaddingLeft, isTextCenter, lineColor, isShowLine, stickView
+            textColor, textSize, textPaddingLeft, isTextCenter, lineColor, isShowLine
         )
     )
     return this

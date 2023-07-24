@@ -1,7 +1,7 @@
 package com.vip.list.listener
 
 import com.vip.list.base.BaseViewHolder
-import com.vip.list.data.BaseMultipleItemBean
+import com.vip.list.data.BaseMultipleItem
 
 /**
  *AUTHOR:AbnerMing
@@ -9,5 +9,5 @@ import com.vip.list.data.BaseMultipleItemBean
  *INTRODUCE:转换接口
  */
 interface OnMultipleConvertListener {
-    fun bind(holder: BaseViewHolder, t: BaseMultipleItemBean)
+    fun bind(holder: BaseViewHolder, t: BaseMultipleItem)
 }

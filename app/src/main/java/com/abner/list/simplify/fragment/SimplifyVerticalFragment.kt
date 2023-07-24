@@ -1,7 +1,5 @@
 package com.abner.list.simplify.fragment
 
-import android.util.Log
-import android.widget.TextView
 import android.widget.Toast
 import com.abner.list.R
 import com.abner.list.databinding.LayoutListBinding
@@ -33,9 +31,9 @@ class SimplifyVerticalFragment : BaseFragment<LayoutListBinding>(R.layout.layout
                         tvDesc.text = model.desc
                         ivPic.setImageResource(model.icon!!)
                     }
-                    setOnItemClickListener { view, position ->
+                    setOnItemClickListener {
                         //条目点击事件
-                        Toast.makeText(requireContext(), "当前点击条目为：$position", Toast.LENGTH_SHORT)
+                        Toast.makeText(requireContext(), "当前点击条目为：$it", Toast.LENGTH_SHORT)
                             .show()
                     }
                 }

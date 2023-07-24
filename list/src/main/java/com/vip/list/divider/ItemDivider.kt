@@ -90,7 +90,7 @@ class ItemDivider : ItemDecoration {
             val bottom = child.bottom + params.bottomMargin
             val left = child.right + params.rightMargin
             val right = left + mLineWidth
-            mDivider!!.setBounds(left, top, right, bottom)
+            mDivider!!.setBounds(left, top + mMargin, right, bottom - mMargin)
             mDivider!!.draw(c)
         }
     }
@@ -107,7 +107,6 @@ class ItemDivider : ItemDecoration {
         } else {
             outRect.set(0, 0, 0, mLineWidth)
         }
-
     }
 
     /**

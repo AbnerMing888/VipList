@@ -5,7 +5,7 @@ package com.vip.list.data
  *DATE:2022/11/4
  *INTRODUCE:
  */
-interface BaseMultipleItemBean {
+interface BaseMultipleItem {
 
     val itemViewType: Int //多条目的类型
 }

@@ -27,7 +27,7 @@ class SingleFragment :
                 val binding = this.getDataBinding<LayoutSingleChoiceListItemBinding>()
                 //判断单选，直接判断  adapterPosition == mCheckPosition 即可
                 binding?.checkbox?.isChecked = adapterPosition == mCheckPosition
-                setOnItemClickListener { view, position ->
+                setOnItemViewClickListener { view, position ->
                     //条目点击
                     val singleBean = getList()[position]//单选 选择的对象
                     mViewModel.name.set(singleBean.name)

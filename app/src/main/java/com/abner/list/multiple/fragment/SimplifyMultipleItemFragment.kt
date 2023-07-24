@@ -8,7 +8,7 @@ import com.abner.list.multiple.data.MultipleItem01Bean
 import com.abner.list.multiple.data.MultipleItem02Bean
 import com.abner.list.multiple.data.MultipleItem03Bean
 import com.vip.base.fragment.BaseFragment
-import com.vip.list.data.BaseMultipleItemBean
+import com.vip.list.data.BaseMultipleItem
 import com.vip.list.util.divider
 import com.vip.list.util.linear
 import com.vip.list.util.setMore
@@ -37,8 +37,8 @@ class SimplifyMultipleItemFragment : BaseFragment<LayoutListBinding>(R.layout.la
      * AUTHOR:AbnerMing
      * INTRODUCE:模拟数据,都是测试数据
      */
-    private fun getMoreList(): MutableList<BaseMultipleItemBean> {
-        return mutableListOf<BaseMultipleItemBean>().apply {
+    private fun getMoreList(): MutableList<BaseMultipleItem> {
+        return mutableListOf<BaseMultipleItem>().apply {
 
             for (a in 0..50) {
                 if (a % 3 == 0) {

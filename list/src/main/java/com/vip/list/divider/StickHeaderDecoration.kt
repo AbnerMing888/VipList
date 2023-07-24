@@ -26,26 +26,18 @@ class StickHeaderDecoration : ItemDecoration {
     private var mIsShowLine = true
 
     constructor(
-        context: Context,
-        height: Float = 40f,
-        bgColor: Int = 0,//背景颜色
+        context: Context, height: Float = 40f, bgColor: Int = 0,//背景颜色
         textColor: Int = 0,//文字颜色
         textSize: Float = 14f,//文字大小
         textPaddingLeft: Float = 0f,//文字距离左边的距离
         isTextCenter: Boolean = false,//文字是否居中
-        lineColor: Int = Color.parseColor("#cccccc"),
-        isShowLine: Boolean = true,//是否绘制分割线
-        stickView: View? = null
+        lineColor: Int = Color.parseColor("#cccccc"), isShowLine: Boolean = true//是否绘制分割线
     ) {
 
         mIsTextCenter = isTextCenter
 
         mIsShowLine = isShowLine
 
-        stickView?.let {
-            //转换至Bitmap
-            //viewToBitmap(stickView)
-        }
 
         mItemHeaderHeight = dp2px(context, height)
         mTextPaddingLeft = dp2px(context, textPaddingLeft)
@@ -90,8 +82,10 @@ class StickHeaderDecoration : ItemDecoration {
                 if (isHeader) {
                     c.drawRect(
                         left,
-                        (view.top - mItemHeaderHeight).toFloat(), right,
-                        view.top.toFloat(), mItemHeaderPaint
+                        (view.top - mItemHeaderHeight).toFloat(),
+                        right,
+                        view.top.toFloat(),
+                        mItemHeaderPaint
                     )
 
                     mTextPaint.getTextBounds(
@@ -118,8 +112,7 @@ class StickHeaderDecoration : ItemDecoration {
                     if (mIsShowLine) {
                         //是否绘制分割线
                         c.drawRect(
-                            left, (view.top - 1).toFloat(), right,
-                            view.top.toFloat(), mLinePaint
+                            left, (view.top - 1).toFloat(), right, view.top.toFloat(), mLinePaint
                         )
                     }
                 }
@@ -152,11 +145,7 @@ class StickHeaderDecoration : ItemDecoration {
             if (isHeader) {
                 val bottom = Math.min(mItemHeaderHeight, view!!.bottom)
                 c.drawRect(
-                    left,
-                    top + view.top - mItemHeaderHeight,
-                    right,
-                    top + bottom,
-                    mItemHeaderPaint
+                    left, top + view.top - mItemHeaderHeight, right, top + bottom, mItemHeaderPaint
                 )
                 mTextPaint.getTextBounds(
                     adapter.getGroupName(position),
@@ -196,10 +185,7 @@ class StickHeaderDecoration : ItemDecoration {
      * INTRODUCE:设置Item的间距
      */
     override fun getItemOffsets(
-        outRect: Rect,
-        view: View,
-        parent: RecyclerView,
-        state: RecyclerView.State
+        outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State
     ) {
         val adapter = parent.adapter
         if (adapter is BAdapter<*>) {
@@ -228,9 +214,7 @@ class StickHeaderDecoration : ItemDecoration {
      */
     private fun sp2px(context: Context, spValue: Float): Float {
         return TypedValue.applyDimension(
-            TypedValue.COMPLEX_UNIT_SP,
-            spValue,
-            context.resources.displayMetrics
+            TypedValue.COMPLEX_UNIT_SP, spValue, context.resources.displayMetrics
         )
     }
 }

@@ -11,12 +11,12 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vip.list.R
 import com.vip.list.data.BaseMultipleChoiceBean
 import com.vip.list.data.BaseNoDragBean
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 /**
@@ -25,8 +25,9 @@ import kotlin.collections.ArrayList
  *INTRODUCE:适配器父类
  */
 abstract class BaseAdapter<T>
-    (@LayoutRes private val layoutId: Int = 0) :
-    RecyclerView.Adapter<BaseViewHolder>() {
+    (@LayoutRes private val layoutId: Int = 0) : RecyclerView.Adapter<BaseViewHolder>() {
+
+    private var mRecyclerManager: RecyclerView.LayoutManager? = null
 
     //条目点击带ViewHolder
     private var mItemViewHolderClick: ((Int, BaseViewHolder) -> Unit?)? = null
@@ -53,10 +54,10 @@ abstract class BaseAdapter<T>
     private var mRecyclerView: RecyclerView? = null
 
     //添加的头集合
-    private var mHeaderLayoutList = ArrayList<Int>()
+    private var mHeaderLayoutList = java.util.ArrayList<Int>()
 
     //添加的尾集合
-    private var mFooterLayoutList = ArrayList<Int>()
+    private var mFooterLayoutList = java.util.ArrayList<Int>()
 
     //多条目布局
     val mLayouts: SparseArray<Int> by lazy(LazyThreadSafetyMode.NONE) { SparseArray() }
@@ -100,6 +101,8 @@ abstract class BaseAdapter<T>
         if (mIsDrag || mIsSlideDelete) {
             bindItemTouchHelper()
         }
+
+        mRecyclerManager = mRecyclerView?.layoutManager
     }
 
 
@@ -130,8 +133,7 @@ abstract class BaseAdapter<T>
                         .inflate(R.layout.layout_list_slide_delete, parent, false)
 
                     //获取用于加载子类布局的父View
-                    val parentView =
-                        slideDelete.findViewById<LinearLayout>(R.id.ll_content)
+                    val parentView = slideDelete.findViewById<LinearLayout>(R.id.ll_content)
                     //获取子类视图
                     val childView = LayoutInflater.from(mContext).inflate(viewType, parent, false)
                     //追加View
@@ -463,10 +465,12 @@ abstract class BaseAdapter<T>
                             notifyItemChanged(position)
                         }
                     }
+
                     //条目点击事件
                     mItemClick?.let {
                         it(position)
                     }
+                    //条目点击事件
                     mItemViewClick?.let {
                         it(holder.itemView, position)
                     }
@@ -477,8 +481,17 @@ abstract class BaseAdapter<T>
             }
 
         } catch (e: Exception) {
+            bindViewHolderError(e)
             e.printStackTrace()
         }
+    }
+
+    /**
+     * AUTHOR:AbnerMing
+     * INTRODUCE:增加获取异常信息
+     */
+    open fun bindViewHolderError(e: Exception) {
+
     }
 
     /**
@@ -524,7 +537,7 @@ abstract class BaseAdapter<T>
      * AUTHOR:AbnerMing
      * INTRODUCE:设置条目点击事件
      */
-    fun setOnItemClickListener(itemViewClick: (view: View, position: Int) -> Unit) {
+    fun setOnItemViewClickListener(itemViewClick: (view: View, position: Int) -> Unit) {
         mItemViewClick = itemViewClick
     }
 
@@ -600,10 +613,18 @@ abstract class BaseAdapter<T>
      * INTRODUCE:展示错误视图
      */
     fun showErrorView() {
+        if (mErrorView == null) {
+            throw NullPointerException("请确定是否执行了addErrorView方法？")
+        }
         if (!mIsError) {
             removeViewItemDecoration()
         }
         mIsError = true
+
+        //改变管理器
+        mRecyclerView?.layoutManager = LinearLayoutManager(getContext())
+
+        notifyDataSetChanged()
     }
 
     /**
@@ -615,6 +636,8 @@ abstract class BaseAdapter<T>
             addViewItemDecoration()
         }
         mIsError = false
+        //还原管理器
+        mRecyclerView?.layoutManager = mRecyclerManager
         notifyDataSetChanged()
     }
 
@@ -623,11 +646,18 @@ abstract class BaseAdapter<T>
      * INTRODUCE:显示空的布局
      */
     fun showEmptyView() {
+        if (mEmptyView == null) {
+            throw NullPointerException("请确定是否执行了addEmptyView方法？")
+        }
         if (!mIsEmpty) {
             //移除线
             removeViewItemDecoration()
         }
         mIsEmpty = true
+        //改变管理器
+        mRecyclerView?.layoutManager = LinearLayoutManager(getContext())
+
+        notifyDataSetChanged()
     }
 
     /**
@@ -640,6 +670,8 @@ abstract class BaseAdapter<T>
             addViewItemDecoration()
         }
         mIsEmpty = false
+        //还原管理器
+        mRecyclerView?.layoutManager = mRecyclerManager
         notifyDataSetChanged()
     }
 
@@ -669,8 +701,7 @@ abstract class BaseAdapter<T>
              * @return 方向
              */
             override fun getMovementFlags(
-                recyclerView: RecyclerView,
-                viewHolder: RecyclerView.ViewHolder
+                recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder
             ): Int {
 
                 val list = getList()
@@ -709,9 +740,7 @@ abstract class BaseAdapter<T>
                 if (mList.isEmpty()) {
                     return false
                 }
-                return if (fromPosition >= 0 && fromPosition < mList.size
-                    && toPosition >= 0 && toPosition < mList.size
-                ) {
+                return if (fromPosition >= 0 && fromPosition < mList.size && toPosition >= 0 && toPosition < mList.size) {
                     //交换数据位置
                     Collections.swap(mList, fromPosition, toPosition)
 

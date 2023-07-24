@@ -2,20 +2,20 @@ package com.vip.list.base
 
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.vip.list.data.BaseMultipleItemBean
+import com.vip.list.data.BaseMultipleItem
 
 /**
  *AUTHOR:AbnerMing
  *DATE:2022/11/2
  *INTRODUCE:多条目
  */
-abstract class BaseMultipleItemAdapter : BaseAdapter<BaseMultipleItemBean>() {
+abstract class BaseMultipleItemAdapter : BaseAdapter<BaseMultipleItem>() {
 
+    var mVariableIdMap = HashMap<String, Int>()
 
     override fun isMultiple(): Boolean {
         return true
     }
-
 
     /**
      * AUTHOR:AbnerMing
@@ -26,43 +26,49 @@ abstract class BaseMultipleItemAdapter : BaseAdapter<BaseMultipleItemBean>() {
         return bean.itemViewType
     }
 
-    override fun dataOperation(holder: BaseViewHolder, t: BaseMultipleItemBean?, position: Int) {
-        try {
-            val bind = DataBindingUtil.bind<ViewDataBinding>(holder.itemView)
-            mVariableIds.forEach {
-                bind?.setVariable(it, t)
-                bind?.executePendingBindings()
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        } finally {
-            bindOperation(holder, t, position)
+    override fun dataOperation(holder: BaseViewHolder, t: BaseMultipleItem?, position: Int) {
+        val bind = DataBindingUtil.bind<ViewDataBinding>(holder.itemView)
+        if (mVariableIdMap.isNotEmpty()) {
+            val mVariableId = mVariableIdMap[t?.javaClass?.name]!!
+            bindVariable(bind, mVariableId, t)
         }
-
+        bindOperation(holder, t, position)
     }
 
-    abstract fun bindOperation(holder: BaseViewHolder, t: BaseMultipleItemBean?, position: Int)
+    /**
+     * AUTHOR:AbnerMing
+     * INTRODUCE:绑定
+     */
+    private fun bindVariable(bind: ViewDataBinding?, variableName: Int, t: BaseMultipleItem?) {
+        bind?.setVariable(variableName, t)
+        bind?.executePendingBindings()
+    }
+
+    abstract fun bindOperation(holder: BaseViewHolder, t: BaseMultipleItem?, position: Int)
 
     /**
      * AUTHOR:AbnerMing
      * INTRODUCE:添加布局
      */
-    var mVariableIds = ArrayList<Int>()
 
     inline fun <reified T> addLayout(layoutId: Int, variableName: Int = -1) {
-        val t = T::class.java.newInstance()
-        val baseMultipleItemBean = t as BaseMultipleItemBean
-        mLayouts.put(baseMultipleItemBean.itemViewType, layoutId)
-        if (variableName != -1) {
-            mVariableIds.add(variableName)
+        try {
+            val t = T::class.java.newInstance()
+            val baseMultipleItemBean = t as BaseMultipleItem
+            mLayouts.put(baseMultipleItemBean.itemViewType, layoutId)
+            if (variableName != -1) {
+                mVariableIdMap[t.javaClass.name] = variableName
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 
     fun addLayoutBindData(t: Any, layoutId: Int, variableName: Int = -1) {
-        val baseMultipleItemBean = t as BaseMultipleItemBean
+        val baseMultipleItemBean = t as BaseMultipleItem
         mLayouts.put(baseMultipleItemBean.itemViewType, layoutId)
         if (variableName != -1) {
-            mVariableIds.add(variableName)
+            mVariableIdMap[t.javaClass.name] = variableName
         }
     }
 
@@ -73,4 +79,5 @@ abstract class BaseMultipleItemAdapter : BaseAdapter<BaseMultipleItemBean>() {
     fun <T> getItemBean(position: Int): T {
         return getModel(position) as T
     }
+
 }

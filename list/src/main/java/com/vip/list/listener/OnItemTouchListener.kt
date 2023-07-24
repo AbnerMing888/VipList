@@ -10,7 +10,6 @@ import android.widget.LinearLayout
 import android.widget.Scroller
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.vip.list.R
 import com.vip.list.base.BaseViewHolder
 import kotlin.math.abs
 

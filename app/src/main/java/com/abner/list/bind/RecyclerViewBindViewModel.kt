@@ -5,6 +5,8 @@ import com.abner.list.R
 import com.abner.list.databinding.LayoutOrdinaryItemBinding
 import com.abner.list.ordinary.OrdinaryListBean
 import com.vip.base.viewmodel.BaseViewModel
+import com.vip.list.adapter.BAdapter
+import com.vip.list.listener.OnAdapterListener
 
 /**
  *AUTHOR:AbnerMing
@@ -28,6 +30,7 @@ class RecyclerViewBindViewModel : BaseViewModel() {
      * INTRODUCE:模拟数据
      */
     fun getList(): MutableList<OrdinaryListBean> {
+
         return mutableListOf<OrdinaryListBean>().apply {
             for (a in 0..20) {
                 val bean = OrdinaryListBean()

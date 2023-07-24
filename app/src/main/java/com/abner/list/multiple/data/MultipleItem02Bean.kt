@@ -1,14 +1,14 @@
 package com.abner.list.multiple.data
 
 import android.graphics.drawable.Drawable
-import com.vip.list.data.BaseMultipleItemBean
+import com.vip.list.data.BaseMultipleItem
 
 /**
  *AUTHOR:AbnerMing
  *DATE:2022/12/23
  *INTRODUCE:模拟测试数据
  */
-class MultipleItem02Bean : BaseMultipleItemBean {
+class MultipleItem02Bean : BaseMultipleItem {
 
     override val itemViewType: Int = 2
 

@@ -17,8 +17,6 @@ open class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private var mItemView: View? = null
     private var mSparse = SparseArray<View>()
 
-    private var mSparseRoot = SparseArray<View>()
-
 
     init {
         mItemView = itemView
@@ -46,7 +44,10 @@ open class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         return view as V
     }
 
-
+    /**
+     * AUTHOR:AbnerMing
+     * INTRODUCE:获取DataBinding
+     */
     fun <DB : ViewDataBinding> getDataBinding(): DB? {
         return DataBindingUtil.bind(itemView)
     }
@@ -54,7 +55,6 @@ open class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun <DB : ViewDataBinding> getDataBinding(view: View): DB? {
         return DataBindingUtil.bind(view)
     }
-
 
     /**
      * AUTHOR:AbnerMing
