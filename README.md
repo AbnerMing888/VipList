@@ -87,9 +87,21 @@ mBinding.recycler.linear()//选择布局管理器
 
 #### 各个功能一览
 
-| 功能  | 源码  | 具体使用                       |
-|-----|-----|----------------------------|
-|   普通列表加载  |  OrdinaryListActivity   | [点击查看](md/OrdinaryList.md) |
+| 功能                | 源码  | 具体使用                       |
+|-------------------|-----|----------------------------|
+| 普通列表加载            |  OrdinaryListActivity   | [点击查看](md/OrdinaryList.md) |
+| 封装列表（推荐）          |  SimplifyListActivity   | [点击查看](md/OrdinaryList.md) |
+| 多条目               |  MultipleItemActivity   | [点击查看](md/OrdinaryList.md) |
+| DataBinding列表(推荐) |  DataBindActivity   | [点击查看](md/OrdinaryList.md) |
+| 设置分割线             |  DividerActivity   | [点击查看](md/OrdinaryList.md) |
+| 设置头和尾             |  HeadFooterActivity   | [点击查看](md/OrdinaryList.md) |
+| 设置缺省页面            |  DataActivity   | [点击查看](md/OrdinaryList.md) |
+| 拖拽排序            |  DragActivity   | [点击查看](md/OrdinaryList.md) |
+| 侧滑删除            |  SlideDeleteActivity   | [点击查看](md/OrdinaryList.md) |
+| 侧滑显示按钮            |  SlideMenuDeleteActivity   | [点击查看](md/OrdinaryList.md) |
+| 条目吸顶操作            |  StickHeaderActivity   | [点击查看](md/OrdinaryList.md) |
+| 单选、多选、全选、反选            |  ChoiceActivity   | [点击查看](md/OrdinaryList.md) |
+| 上拉刷新和下拉            |  RefreshListActivity   | [点击查看](md/OrdinaryList.md) |
 
 ## 欢迎关注作者
 

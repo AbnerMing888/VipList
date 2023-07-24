@@ -111,7 +111,7 @@ class MainActivity : BaseActivity<LayoutListBinding>() {
             12 -> {//单选、多选、全选、反选
                 start<ChoiceActivity>()
             }
-            13 -> {//上拉刷新和上拉
+            13 -> {//上拉刷新和下拉
                 start<RefreshListActivity>()
             }
         }
