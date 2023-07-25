@@ -18,7 +18,7 @@ VipList一个超简单的列表加载，添加头尾，缺省页，拖拽排序�
     <strong>超简单的RecyclerView加载框架</strong>
     <br>
     <br>
-    <a href="../md/doc.md">使用文档</a>
+    <a href="https://github.com/AbnerMing888/VipList/blob/master/md/doc.md">使用文档</a>
     | <a href="https://www.vipandroid.cn/ming/a/apk.html?a_apk_id=201">下载体验</a>
     <br><br>
     <img src="images/device_list.png" width="300px" />
@@ -121,7 +121,7 @@ mBinding.recycler.linear()//选择布局管理器
 
 ## 赞赏作者
 
-看在作者这么努力的份上，赞赏随意，给个鼓励好不好~
+看在作者这么努力的份上，微信赞赏随意，给个鼓励好不好~
 
 <img src="images/wx_code.jpg" width="200px" />
 
