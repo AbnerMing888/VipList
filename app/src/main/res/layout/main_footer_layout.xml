@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/vip_dp_10">
+
+    <ImageView
+        android:id="@+id/iv_code"
+        android:layout_width="@dimen/vip_dp_100"
+        android:layout_height="@dimen/vip_dp_100"
+        android:layout_marginTop="@dimen/vip_dp_20"
+        android:src="@drawable/wx_code"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vip_dp_10"
+        android:gravity="center"
+        android:text="看在我这么努力的份上，微信赞赏随意，\n给个鼓励好不好~"
+        android:textColor="@color/base_color_272F3E"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_code" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

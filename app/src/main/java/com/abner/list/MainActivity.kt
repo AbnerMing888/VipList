@@ -19,6 +19,7 @@ import com.abner.list.slide.SlideDeleteActivity
 import com.abner.list.slide.SlideMenuDeleteActivity
 import com.abner.list.stick.StickHeaderActivity
 import com.vip.base.activity.BaseActivity
+import com.vip.list.util.getAdapter
 import com.vip.list.util.linear
 import com.vip.list.util.set
 
@@ -38,7 +39,7 @@ class MainActivity : BaseActivity<LayoutListBinding>() {
         setBarTitle("列表加载")
         hintLeftMenu()
         //加载列表
-        mBinding.recycler.linear().set<String> {
+        val bAdapter = mBinding.recycler.linear().set<String> {
             mNotifySingleChoice = true//开启单选刷新
             addLayout(R.layout.layout_main_item, BR.str)
             bindData {
@@ -62,7 +63,12 @@ class MainActivity : BaseActivity<LayoutListBinding>() {
 
             }
 
-        }.setList(getList())
+        }
+
+        bAdapter.setList(getList())
+
+        bAdapter.addFoot(R.layout.main_footer_layout)
+
 
     }
 

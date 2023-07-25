@@ -17,7 +17,7 @@
         <TextView
             android:id="@+id/tv_content"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/gwm_dp_50"
+            android:layout_height="@dimen/vip_dp_50"
             android:gravity="center"
             android:text="@{str}"
             app:layout_constraintTop_toTopOf="parent" />

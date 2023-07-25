@@ -11,7 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/gwm_dp_50">
+        android:layout_height="@dimen/vip_dp_50">
 
         <TextView
             android:id="@+id/tv_content"

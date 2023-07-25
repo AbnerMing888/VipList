@@ -17,17 +17,17 @@
             android:id="@+id/recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="@dimen/gwm_dp_50" />
+            android:layout_marginBottom="@dimen/vip_dp_50" />
 
 
         <RelativeLayout
             android:id="@+id/layout_bottom"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/gwm_dp_50"
+            android:layout_height="@dimen/vip_dp_50"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingLeft="@dimen/gwm_dp_10"
-            android:paddingRight="@dimen/gwm_dp_10"
+            android:paddingLeft="@dimen/vip_dp_10"
+            android:paddingRight="@dimen/vip_dp_10"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <TextView
@@ -40,7 +40,7 @@
                 android:id="@+id/tv_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/gwm_dp_10"
+                android:layout_marginStart="@dimen/vip_dp_10"
                 android:layout_toEndOf="@id/tv_number"
                 android:text="@{String.valueOf(choice.allPrice)}"
                 android:textColor="@color/color_ff0000" />
@@ -50,7 +50,7 @@
                 android:id="@+id/tv_select_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/gwm_dp_10"
+                android:layout_marginEnd="@dimen/vip_dp_10"
                 android:layout_toStartOf="@id/tv_invert_selection"
                 android:text="全选"
                 android:textColor="@color/color_ff0000" />

@@ -22,7 +22,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/gwm_dp_20"
+            android:layout_marginTop="@dimen/vip_dp_20"
             android:text="我是空页面" />
 
     </LinearLayout>

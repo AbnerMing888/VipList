@@ -4,14 +4,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/gwm_dp_80"
-        android:paddingLeft="@dimen/gwm_dp_20"
-        android:paddingRight="@dimen/gwm_dp_20">
+        android:layout_height="@dimen/vip_dp_80"
+        android:paddingLeft="@dimen/vip_dp_20"
+        android:paddingRight="@dimen/vip_dp_20">
 
         <ImageView
             android:id="@+id/iv_pic"
-            android:layout_width="@dimen/gwm_dp_60"
-            android:layout_height="@dimen/gwm_dp_60"
+            android:layout_width="@dimen/vip_dp_60"
+            android:layout_height="@dimen/vip_dp_60"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -19,7 +19,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/gwm_dp_10"
+            android:layout_marginStart="@dimen/vip_dp_10"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/iv_pic"
@@ -30,15 +30,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#222222"
-                android:textSize="@dimen/gwm_sp_16" />
+                android:textSize="@dimen/vip_sp_16" />
 
             <TextView
                 android:id="@+id/tv_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/gwm_dp_10"
+                android:layout_marginTop="@dimen/vip_dp_10"
                 android:textColor="#666666"
-                android:textSize="@dimen/gwm_sp_14" />
+                android:textSize="@dimen/vip_sp_14" />
 
         </LinearLayout>
 

@@ -11,13 +11,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/gwm_dp_50">
+        android:layout_height="@dimen/vip_dp_50">
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/gwm_dp_10"
+            android:layout_marginStart="@dimen/vip_dp_10"
             android:text="@{multiple.name}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -26,7 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/gwm_dp_10"
+            android:layout_marginStart="@dimen/vip_dp_10"
             android:text="@{multiple.priceText}"
             android:textColor="@color/color_ff0000"
             app:layout_constraintBottom_toBottomOf="parent"
