@@ -117,7 +117,13 @@ mBinding.recycler.linear()//选择布局管理器
 
 微信搜索【Android干货铺】，或扫描下面二维码关注，查阅更多技术文章！
 
-<img src="images/abner.jpg" width="300px" />
+<img src="images/abner.jpg" width="200px" />
+
+## 赞赏作者
+
+看在作者这么努力的份上，赞赏随意，给个鼓励好不好~
+
+<img src="images/wx_code.jpg" width="200px" />
 
 ## License
 
