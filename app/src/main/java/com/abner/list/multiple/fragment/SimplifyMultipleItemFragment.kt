@@ -27,9 +27,6 @@ class SimplifyMultipleItemFragment : BaseFragment<LayoutListBinding>(R.layout.la
                 addLayout<MultipleItem01Bean>(R.layout.layout_multiple_01, BR.multiple1)
                 addLayout<MultipleItem02Bean>(R.layout.layout_multiple_02, BR.multiple2)
                 addLayout<MultipleItem03Bean>(R.layout.layout_multiple_03, BR.multiple3)
-                bindData {
-
-                }
             }.setList(getMoreList())
     }
 

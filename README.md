@@ -64,7 +64,7 @@ allprojects {
 
 |  依赖  |  概述  | 版本号   | 集成                                     |
 |  ----  |  ----  |-------|----------------------------------------|
-|  relist  |  一个包含了列表加载和下拉刷新、上拉加载的库  | 1.0.3 | implementation 'com.vip:relist:1.0.3'  |
+|  relist  |  一个包含了列表加载和下拉刷新、上拉加载的库  | 1.0.4 | implementation 'com.vip:relist:1.0.4'  |
 |  list  |  只包含列表加载（添加头尾、缺省页、侧滑删除、吸顶效果、分割线、DataBinding等）  | 1.0.3 | implementation 'com.vip:list:1.0.3'    |
 |  refresh  |  只包含下拉刷新、上拉加载  | 1.0.0 | implementation 'com.vip:refresh:1.0.0' |
 
@@ -74,7 +74,7 @@ allprojects {
 
 ```groovy
 dependencies {
-    implementation 'com.vip:relist:1.0.3'//一个包含了列表加载和下拉刷新、上拉加载的库，它包含了下面的两个库，使用它，下面的两个就不要引用了。
+    implementation 'com.vip:relist:1.0.4'//一个包含了列表加载和下拉刷新、上拉加载的库，它包含了下面的两个库，使用它，下面的两个就不要引用了。
     implementation 'com.vip:list:1.0.3'//列表加载库，如果使用了relist，这个不要再引用
     implementation 'com.vip:refresh:1.0.0'//下拉刷新、上拉加载库，如果使用了relist，这个不要再引用
 }
@@ -96,21 +96,22 @@ mBinding.recycler.linear()//选择布局管理器
 
 #### 各个功能一览
 
-| 功能                | 源码  | 具体使用                    |
-|-------------------|-----|-------------------------|
-| 普通列表加载            |  OrdinaryListActivity   | [点击查看](md/OrdinaryList.md) |
-| 封装列表（推荐）          |  SimplifyListActivity   | [点击查看](md/SimplifyList.md) |
-| 多条目               |  MultipleItemActivity   | [点击查看](md/MultipleItem.md) |
+| 功能              | 源码  | 具体使用                    |
+|-----------------|-----|-------------------------|
+| 普通列表加载          |  OrdinaryListActivity   | [点击查看](md/OrdinaryList.md) |
+| 封装列表（推荐）        |  SimplifyListActivity   | [点击查看](md/SimplifyList.md) |
+| 多条目             |  MultipleItemActivity   | [点击查看](md/MultipleItem.md) |
 | DataBinding列表(推荐) |  DataBindActivity   | [点击查看](md/DataBind.md) |
-| 设置分割线             |  DividerActivity   | [点击查看](md/Divider.md) |
-| 设置头和尾             |  HeadFooterActivity   | [点击查看](md/HeadFooter.md) |
-| 设置缺省页面            |  DataActivity   | [点击查看](md/Data.md) |
+| 设置分割线           |  DividerActivity   | [点击查看](md/Divider.md) |
+| 设置头和尾           |  HeadFooterActivity   | [点击查看](md/HeadFooter.md) |
+| 数据追加和删除         |  DataActivity   | [点击查看](md/Data.md) |
+| 设置缺省页面          |  DefaultActivity   | [点击查看](md/Default.md) |
 | 拖拽排序            |  DragActivity   | [点击查看](md/Drag.md) |
 | 侧滑删除            |  SlideDeleteActivity   | [点击查看](md/SlideDelete.md) |
-| 侧滑显示按钮            |  SlideMenuDeleteActivity   | [点击查看](md/SlideMenuDelete.md) |
-| 条目吸顶操作            |  StickHeaderActivity   | [点击查看](md/StickHeader.md) |
-| 单选、多选、全选、反选            |  ChoiceActivity   | [点击查看](md/Choice.md) |
-| 上拉刷新和下拉            |  RefreshListActivity   | [点击查看](md/RefreshList.md) |
+| 侧滑显示按钮          |  SlideMenuDeleteActivity   | [点击查看](md/SlideMenuDelete.md) |
+| 条目吸顶操作          |  StickHeaderActivity   | [点击查看](md/StickHeader.md) |
+| 单选、多选、全选、反选     |  ChoiceActivity   | [点击查看](md/Choice.md) |
+| 上拉刷新和下拉         |  RefreshListActivity   | [点击查看](md/RefreshList.md) |
 
 ## 欢迎关注作者
 

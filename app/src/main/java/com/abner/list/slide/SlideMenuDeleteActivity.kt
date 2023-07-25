@@ -1,13 +1,6 @@
 package com.abner.list.slide
 
-import android.util.Log
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
-import com.abner.list.BR
 import com.abner.list.R
-import com.abner.list.databinding.LayoutItemBinding
 import com.abner.list.databinding.LayoutListBinding
 import com.vip.base.activity.BaseActivity
 import com.vip.list.util.divider

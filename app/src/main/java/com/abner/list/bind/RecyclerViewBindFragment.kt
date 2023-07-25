@@ -13,7 +13,8 @@ import com.vip.base.fragment.BaseVMFragment
  *INTRODUCE:RecyclerView绑定
  */
 class RecyclerViewBindFragment :
-    BaseVMFragment<LayoutBindListBinding, RecyclerViewBindViewModel>(R.layout.layout_bind_list) {
+    BaseVMFragment<LayoutBindListBinding,
+            RecyclerViewBindViewModel>(R.layout.layout_bind_list) {
 
 
     override fun initVMData() {

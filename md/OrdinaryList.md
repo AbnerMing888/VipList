@@ -1,10 +1,14 @@
 # 普通列表加载
 
+[源码位置](../app/src/main/java/com/abner/list/ordinary/OrdinaryListActivity.kt)
+
 普通的列表加载，和之前的使用方式一样，创建适配器，然后设置给RecyclerView。这种方式，经过抽取封装
 之后，已不建议使用，毕竟还得要每次创建一个适配器，冗余代码过多，不过呢，有的老铁想用的话，也可以的，毕竟
 有的人还是喜欢用这种方式的。
 
-## 纵向列表，源码位置（OrdinaryVerticalFragment）
+## 纵向列表
+
+[源码位置](../app/src/main/java/com/abner/list/ordinary/fragment/OrdinaryVerticalFragment.kt)
 
 ### 1、创建适配器
 
@@ -87,9 +91,9 @@ adapter.setOnItemClickListener {
 
 横向、网格、瀑布流列表加载，除了布局管理器不一样，其他的使用和上述的纵向列表一致，大家直接看源码即可。
 
-[横向](../app/src/main/java/com/abner/list/ordinary/fragment/OrdinaryHorizontalFragment.kt)
-[网格](../app/src/main/java/com/abner/list/ordinary/fragment/OrdinaryGridFragment.kt)
-[瀑布流](../app/src/main/java/com/abner/list/ordinary/fragment/OrdinaryStaggeredFragment.kt)
+[横向列表](../app/src/main/java/com/abner/list/ordinary/fragment/OrdinaryHorizontalFragment.kt)
+[网格列表](../app/src/main/java/com/abner/list/ordinary/fragment/OrdinaryGridFragment.kt)
+[瀑布流列表](../app/src/main/java/com/abner/list/ordinary/fragment/OrdinaryStaggeredFragment.kt)
 
 
 

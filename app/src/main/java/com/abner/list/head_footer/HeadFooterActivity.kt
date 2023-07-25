@@ -34,6 +34,7 @@ class HeadFooterActivity : BaseActivity<LayoutListBinding>(R.layout.layout_list)
                 bindHeadOrFoot {
                     //头和尾操作
                 }
+
             }
 
         //初始添加数据

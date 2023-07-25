@@ -4,7 +4,6 @@ import android.widget.Toast
 import com.abner.list.R
 import com.abner.list.databinding.LayoutListBinding
 import com.abner.list.databinding.LayoutOrdinaryHorizontalItemBinding
-import com.abner.list.databinding.LayoutOrdinaryItemBinding
 import com.abner.list.ordinary.OrdinaryListBean
 import com.vip.base.fragment.BaseFragment
 import com.vip.list.util.divider
