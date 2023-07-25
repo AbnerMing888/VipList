@@ -10,6 +10,8 @@ import com.abner.list.ordinary.adapter.OrdinaryListAdapter
 import com.abner.list.ordinary.OrdinaryListBean
 import com.vip.base.fragment.BaseFragment
 import com.vip.list.divider.ItemDivider
+import com.vip.list.util.divider
+import com.vip.list.util.linear
 
 /**
  *AUTHOR:AbnerMing

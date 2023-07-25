@@ -19,7 +19,6 @@ import com.abner.list.slide.SlideDeleteActivity
 import com.abner.list.slide.SlideMenuDeleteActivity
 import com.abner.list.stick.StickHeaderActivity
 import com.vip.base.activity.BaseActivity
-import com.vip.list.util.getAdapter
 import com.vip.list.util.linear
 import com.vip.list.util.set
 
@@ -69,7 +68,6 @@ class MainActivity : BaseActivity<LayoutListBinding>() {
 
         bAdapter.addFoot(R.layout.main_footer_layout)
 
-
     }
 
     /**
@@ -117,7 +115,7 @@ class MainActivity : BaseActivity<LayoutListBinding>() {
             12 -> {//单选、多选、全选、反选
                 start<ChoiceActivity>()
             }
-            13 -> {//上拉刷新和下拉
+            13 -> {//下拉刷新和上拉加载
                 start<RefreshListActivity>()
             }
         }

@@ -4,7 +4,7 @@
 mBinding.recycler.linear()//选择布局管理器
     .set<OrdinaryListBean> {
         addLayout(R.layout.layout_ordinary_item)//item布局
-    }.setList(getList())//设置布局
+    }.setList(getList())//设置数据
 ```
 
 上面的代码就完成了一个列表加载，就问你，简单不简单！！！
