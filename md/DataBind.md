@@ -169,6 +169,26 @@ class RecyclerViewBindViewModel : BaseViewModel() {
 </layout>
 ```
 
+### 4、属性一览
+
+| 属性                     | 类型                             | 概述                                      |
+| ---------------------- | ------------------------------ | --------------------------------------- |
+| listManager            | Int                            | 布局管理器：默认为纵向的普通列表。0：普通列表1：网格2：瀑布流        |
+| listOrientation        | Int                            | 设置列表方向，默认纵向。横向：RecyclerView.HORIZONTAL |
+| listSpanCount          | Int                            | 展示几列，适用于网格和瀑布流                          |
+| isDivider              | Boolean                        | 是否展示分割线                                 |
+| dividerDrawable        | Int                            | 分割线样式                                   |
+| listLayout             | Int                            | Item布局                                  |
+| listData               | MutableList\<T\>                | 数据                                      |
+| listVariableName       | Int                            | 绑定的BR                                   |
+| listAdapter            | OnAdapterListener\<T\>          | 返回适配器，可以通过这里实现，适配器中的逻辑处理                |
+| isMultiple             | Boolean                        | 是否是多条目                                  |
+| multipleAdapter        | OnAdapterMultipleListener      | 返回多条目适配器                                |
+| multipleData           | MutableList\<BaseMultipleItem\> | 多条目数据                                   |
+| multipleLayout         | MutableList\<Int\>              | 多条目布局                                   |
+| multipleLayoutBindData | MutableList<Class<*>>        | layout绑定的数据对象                           |
+| multipleVariableName   | MutableList\<Int\>              | xml绑定的对应的VariableName                   |
+
 
 
 
