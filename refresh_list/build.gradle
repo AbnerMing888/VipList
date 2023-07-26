@@ -1,7 +1,6 @@
 apply from: "${rootProject.rootDir}/common.gradle"
 project.ext.setAppOrLibDefaultConfig project
 dependencies {
-    api 'com.vip:list:1.0.3'
+    api 'com.vip:list:1.0.4'
     api 'com.vip:refresh:1.0.0'
-    //api project(path: ':list')
 }

@@ -32,7 +32,6 @@ class OrdinaryMultipleItemFragment : BaseFragment<LayoutListBinding>(R.layout.la
      */
     private fun getMoreList(): MutableList<BaseMultipleItem> {
         return mutableListOf<BaseMultipleItem>().apply {
-
             for (a in 0..20) {
                 if (a % 3 == 0) {
                     val bean02 = MultipleItem02Bean()
@@ -47,7 +46,8 @@ class OrdinaryMultipleItemFragment : BaseFragment<LayoutListBinding>(R.layout.la
 
                 if (a % 2 == 0) {
                     val bean01 = MultipleItem01Bean()
-                    bean01.icon = ContextCompat.getDrawable(requireContext(), R.mipmap.vip_list_logo)
+                    bean01.icon =
+                        ContextCompat.getDrawable(requireContext(), R.mipmap.vip_list_logo)
                     bean01.title = "我是类型一测试标题"
                     bean01.desc = "我是类型一测试描述"
                     add(bean01)

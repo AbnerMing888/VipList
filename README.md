@@ -19,7 +19,7 @@ VipList一个超简单的列表加载，添加头尾，缺省页，拖拽排序�
     <br>
     <br>
     <a href="https://github.com/AbnerMing888/VipList/blob/master/md/doc.md">使用文档</a>
-    | <a href="https://www.vipandroid.cn/ming/a/apk.html?a_apk_id=201">下载体验</a>
+    | <a href="https://www.vipandroid.cn/ming/a/apk.html?a_apk_id=202">下载体验</a>
     <br><br>
     <img src="images/device_list.png" width="300px" />
     <br><br>
@@ -64,8 +64,8 @@ allprojects {
 
 |  依赖  |  概述  | 版本号   | 集成                                     |
 |  ----  |  ----  |-------|----------------------------------------|
-|  relist  |  一个包含了列表加载和下拉刷新、上拉加载的库  | 1.0.4 | implementation 'com.vip:relist:1.0.4'  |
-|  list  |  只包含列表加载（添加头尾、缺省页、侧滑删除、吸顶效果、分割线、DataBinding等）  | 1.0.3 | implementation 'com.vip:list:1.0.3'    |
+|  relist  |  一个包含了列表加载和下拉刷新、上拉加载的库  | 1.0.5 | implementation 'com.vip:relist:1.0.5'  |
+|  list  |  只包含列表加载（添加头尾、缺省页、侧滑删除、吸顶效果、分割线、DataBinding等）  | 1.0.4 | implementation 'com.vip:list:1.0.4'    |
 |  refresh  |  只包含下拉刷新、上拉加载  | 1.0.0 | implementation 'com.vip:refresh:1.0.0' |
 
 #### 具体引入
@@ -74,8 +74,8 @@ allprojects {
 
 ```groovy
 dependencies {
-    implementation 'com.vip:relist:1.0.4'//一个包含了列表加载和下拉刷新、上拉加载的库，它包含了下面的两个库，使用它，下面的两个就不要引用了。
-    implementation 'com.vip:list:1.0.3'//列表加载库，如果使用了relist，这个不要再引用
+    implementation 'com.vip:relist:1.0.5'//一个包含了列表加载和下拉刷新、上拉加载的库，它包含了下面的两个库，使用它，下面的两个就不要引用了。
+    implementation 'com.vip:list:1.0.4'//列表加载库，如果使用了relist，这个不要再引用
     implementation 'com.vip:refresh:1.0.0'//下拉刷新、上拉加载库，如果使用了relist，这个不要再引用
 }
 ```

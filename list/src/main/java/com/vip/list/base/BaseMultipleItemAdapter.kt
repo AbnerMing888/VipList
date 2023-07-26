@@ -27,8 +27,8 @@ abstract class BaseMultipleItemAdapter : BaseAdapter<BaseMultipleItem>() {
     }
 
     override fun dataOperation(holder: BaseViewHolder, t: BaseMultipleItem?, position: Int) {
-        val bind = DataBindingUtil.bind<ViewDataBinding>(holder.itemView)
         if (mVariableIdMap.isNotEmpty()) {
+            val bind = DataBindingUtil.bind<ViewDataBinding>(holder.itemView)
             val mVariableId = mVariableIdMap[t?.javaClass?.name]!!
             bindVariable(bind, mVariableId, t)
         }

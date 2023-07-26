@@ -6,12 +6,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.abner.list.R
 import com.abner.list.databinding.LayoutListBinding
-import com.abner.list.ordinary.adapter.OrdinaryListAdapter
 import com.abner.list.ordinary.OrdinaryListBean
+import com.abner.list.ordinary.adapter.OrdinaryListAdapter
 import com.vip.base.fragment.BaseFragment
 import com.vip.list.divider.ItemDivider
-import com.vip.list.util.divider
-import com.vip.list.util.linear
 
 /**
  *AUTHOR:AbnerMing
