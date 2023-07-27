@@ -7,8 +7,6 @@ mBinding.recycler.linear()//选择布局管理器
     }.setList(getList())//设置数据
 ```
 
-上面的代码就完成了一个列表加载，就问你，简单不简单！！！
-
 VipList一个超简单的列表加载，添加头尾，缺省页，拖拽排序，侧滑删除，DataBinding，设置分割线，吸顶效果，等等，从未如此简单！
 
 <p align="center"><img src="images/vip_list.png" width="300px"/></p>
@@ -87,7 +85,7 @@ dependencies {
 mBinding.recycler.linear()//选择布局管理器
     .set<OrdinaryListBean> {
         addLayout(R.layout.layout_ordinary_item)//item布局
-    }.setList(getList())//设置布局
+    }.setList(getList())//设置数据
 
 ```
 
