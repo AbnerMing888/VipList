@@ -54,28 +54,28 @@ class OrdinaryListBean {
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
-        android:layout_height="@dimen/gwm_dp_80" android:paddingLeft="@dimen/gwm_dp_20"
-        android:paddingRight="@dimen/gwm_dp_20">
+        android:layout_height="@dimen/dp_80" android:paddingLeft="@dimen/dp_20"
+        android:paddingRight="@dimen/dp_20">
 
-        <ImageView android:id="@+id/iv_pic" android:layout_width="@dimen/gwm_dp_60"
-            android:layout_height="@dimen/gwm_dp_60" android:src="@mipmap/vip_list_logo"
+        <ImageView android:id="@+id/iv_pic" android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60" android:src="@mipmap/vip_list_logo"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/gwm_dp_10" android:orientation="vertical"
+            android:layout_marginStart="@dimen/dp_10" android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/iv_pic"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView android:id="@+id/tv_title" android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:text="@{ordinary.title}"
-                android:textColor="#222222" android:textSize="@dimen/gwm_sp_16" />
+                android:textColor="#222222" android:textSize="@dimen/sp_16" />
 
             <TextView android:id="@+id/tv_desc" android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_marginTop="@dimen/gwm_dp_10"
+                android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_10"
                 android:text="@{ordinary.desc}" android:textColor="#666666"
-                android:textSize="@dimen/gwm_sp_14" />
+                android:textSize="@dimen/sp_14" />
 
         </LinearLayout>
 
