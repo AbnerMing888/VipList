@@ -146,9 +146,9 @@ adapter.setList(getMoreList())//getMoreList()为多条目数据源
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
-        android:layout_height="@dimen/gwm_dp_80">
+        android:layout_height="@dimen/dp_80">
 
-        <ImageView android:id="@+id/iv_pic" android:layout_width="@dimen/gwm_dp_60"
+        <ImageView android:id="@+id/iv_pic" android:layout_width="@dimen/dp_60"
             android:layout_height="@dimen/gwm_dp_60" android:src="@{multiple1.icon}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" />
@@ -161,12 +161,12 @@ adapter.setList(getMoreList())//getMoreList()为多条目数据源
 
             <TextView android:id="@+id/tv_title" android:layout_width="wrap_content"
                 android:layout_height="wrap_content" android:text="@{multiple1.title}"
-                android:textColor="#222222" android:textSize="@dimen/gwm_sp_16" />
+                android:textColor="#222222" android:textSize="@dimen/sp_16" />
 
             <TextView android:id="@+id/tv_desc" android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:layout_marginTop="@dimen/gwm_dp_5"
+                android:layout_height="wrap_content" android:layout_marginTop="@dimen/dp_5"
                 android:text="@{multiple1.desc}" android:textColor="#666666"
-                android:textSize="@dimen/gwm_sp_14" />
+                android:textSize="@dimen/sp_14" />
 
         </LinearLayout>
 
