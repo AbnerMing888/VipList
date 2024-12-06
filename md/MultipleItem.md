@@ -149,12 +149,12 @@ adapter.setList(getMoreList())//getMoreList()为多条目数据源
         android:layout_height="@dimen/dp_80">
 
         <ImageView android:id="@+id/iv_pic" android:layout_width="@dimen/dp_60"
-            android:layout_height="@dimen/gwm_dp_60" android:src="@{multiple1.icon}"
+            android:layout_height="@dimen/dp_60" android:src="@{multiple1.icon}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/gwm_dp_10" android:orientation="vertical"
+            android:layout_marginStart="@dimen/dp_10" android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/iv_pic"
             app:layout_constraintTop_toTopOf="parent">
